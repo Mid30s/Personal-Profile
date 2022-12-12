@@ -1,7 +1,7 @@
 :root {
     /* declare a variable with `--` syntax */
-    --dark: #13293d;
-    --light: #75AAB6;
+    --dark: #363630;
+    --light: #fff;
     --nav-color: #96adb2;
   }
 
@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: var(--light);
+    background-color: var(--dark);
 }
 
 /* uses header element selector */
@@ -20,7 +20,7 @@ header {
     display: flex;
     justify-content: space-between;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #363630
+    background-color: var(--dark)
 }
 
 .profile-photo {
@@ -34,7 +34,7 @@ header {
 nav ul {
     display: flex;
     justify-content: space-between;
-    min-width: 700px;
+    flex: 0 0 100%;
     font-size: 30px;
     margin: 110px 50px 10px 10px;  
 }
@@ -54,7 +54,7 @@ nav a:hover {
 .bg-image {
     background-image: url("../images/background.png");
     height: 350px;
-    background-position: top;
+    /* background-position: top; */
     background-size: cover;
 }
   
@@ -62,21 +62,148 @@ nav a:hover {
     text-align: center;
     position: relative;
     padding-top: 150px;
-    color: white;
+    color: var(--light);
     font-size: 25px;
     line-height: 3;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.section-layout {
+    display: flex;
+    margin: 1%;
+}
+  
+.section-layout>h2 {
+    /* position: relative; */
+    flex: 0 0 10%;
+    /* height: 100%; */
+    margin-top: 15px;
+    margin-right: 5px;
+    text-align: right;
+    font-size: 25px;
+    color: var(--light);
+}
+
+
+/* use >div to select first div next to class selector */
+.section-layout>div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+
+    flex: 0 0 75%;
+    height: auto;
+    margin: 10px;
+    border: solid 3px pink;
+
+
+    /* border-left: 3px solid; */
+    padding: 1rem;
+    color: var(--light);
+    /* line-height: 2; */
+   
+}
+
+
+.main-project {
+  flex: 0 0 100%;
+  padding: 1rem;
+  /* when the screen resizes, make it so our columns don't jump in size */
+  transition: flex-basis 500ms linear;
+  /* margin-bottom: 1.5rem; */
+  border: solid 3px red;
+  height: auto;
+  
+}
+
+.other-projects {
+  flex: 0 0 50%;
+  padding: 1rem;
+  /* when the screen resizes, make it so our columns don't jump in size */
+  transition: flex-basis 500ms linear;
+  /* margin-bottom: 1.5rem; */
+  border: solid 3px rgb(32, 11, 93);
+   
+}
+
+.project-content {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: flex-start; */
+    min-height: 100%;
+    padding: 20px;
+    border: 3px dashed green;
+
+    position: relative;
+    
+    transition: all 0.5s ease-in-out;
+
+}
+
+.project-content img {
+
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+   
+    border: solid 3px yellow;
+}
+
+
+
+
+
+.note {
+    width: 120px;
+    height: 70px;
+    text-align: left;
+    background-color: #c4641b;
+    position: absolute;
+    border: solid 3px black;
+    bottom: 100px;
+    /* margin: -8rem 0 1.5rem 0; */
+
+}
+
+
+
+
+@media screen and (max-width: 920px) {
+  nav ul {
+    flex-direction: column;
+    margin: 10px;
+    font-size: 50px;
+  }
+  
+  header {
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.5;
   }
 
+  .profile-photo {
+    width: 300px;
+  }
 
+  .section-layout>div {
+    flex: 0 0 89%;
+    flex-direction: column;
+    
+  }
 
+  .main-project {
+    flex: 0 0 100%;
+  }
 
+  .other-projects {
+    flex: 0 0 100%;
+  }
 
-
-
-
-
-
-
-
-
+    
+}
   
