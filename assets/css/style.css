@@ -1,8 +1,10 @@
 :root {
+
     /* declare a variable with `--` syntax */
     --dark: #363630;
     --light: #fff;
-    --nav-color: #96adb2;
+    --nav-color: #c4641b;
+    --hover-color: #a1b6ca
   }
 
   * {
@@ -15,7 +17,7 @@ body {
     background-color: var(--dark);
 }
 
-/* uses header element selector */
+ /* sets flexbox for hearder */
 header {
     display: flex;
     justify-content: space-between;
@@ -24,37 +26,36 @@ header {
 }
 
 .profile-photo {
-    display: inline-block;
     width: 160px;
     margin: 10px 20px 0 30px;
     -webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
 }
 
+/* sets flexbox for nav */
 nav ul {
     display: flex;
     justify-content: space-between;
     flex: 0 0 100%;
     font-size: 30px;
-    margin: 110px 50px 10px 10px;  
+    margin: 110px 80px 10px 10px;  
 }
   
 nav a {
-    color: #c4641b;
+    color: var(--nav-color);
     font-weight: bold;
     text-decoration: none;
-    border-radius: solid;
     padding: 10px;
 }
 
+ /*nav hover effects*/
 nav a:hover {
-    background-color: #a1b6ca;
+    background-color: var(--hover-color);
 }
 
 .bg-image {
     background-image: url("../images/background.png");
     height: 350px;
-    /* background-position: top; */
     background-size: cover;
 }
   
@@ -67,7 +68,7 @@ nav a:hover {
     line-height: 3;
 }
 
-h1 {
+.bg-image h1 {
     font-size: 30px;
 }
 
@@ -76,134 +77,162 @@ h1 {
     margin: 1%;
 }
   
+/* selects all h2 next .section-layout*/
 .section-layout>h2 {
-    /* position: relative; */
-    flex: 0 0 10%;
-    /* height: 100%; */
-    margin-top: 15px;
-    margin-right: 5px;
+    flex: 0 0 13%;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
     text-align: right;
-    font-size: 25px;
+    font-size: 30px;
     color: var(--light);
 }
 
+/*sets line-height and font size for about me paragraph*/
+.section-layout .about-me {
+    line-height: 1.5;
+    font-size: 20px
+}
 
-/* use >div to select first div next to class selector */
+/* use >div to select first div next to class selector,which includes 
+   about-me paragraph, 5 projects and contact lists*/
 .section-layout>div {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
-
-
+    justify-content: flex-start;
     flex: 0 0 75%;
-    height: auto;
-    margin: 10px;
-    border: solid 3px pink;
-
-
-    /* border-left: 3px solid; */
-    padding: 1rem;
+    margin-top: 1.5rem;
+    padding-left: 1rem;
+    border-left: solid 3px var(--nav-color);
     color: var(--light);
-    /* line-height: 2; */
-   
+    line-height: 1.5;
 }
 
 
+/* sets 100% to get full width*/
 .main-project {
-  flex: 0 0 100%;
-  padding: 1rem;
-  /* when the screen resizes, make it so our columns don't jump in size */
-  transition: flex-basis 500ms linear;
-  /* margin-bottom: 1.5rem; */
-  border: solid 3px red;
-  height: auto;
-  
+  flex: 1 0 100%;
+  padding: 1rem; 
 }
 
+/* sets 50% to get 2 projects in a row*/
 .other-projects {
-  flex: 0 0 50%;
-  padding: 1rem;
-  /* when the screen resizes, make it so our columns don't jump in size */
-  transition: flex-basis 500ms linear;
-  /* margin-bottom: 1.5rem; */
-  border: solid 3px rgb(32, 11, 93);
-   
+  flex: 0 1 50%;
+  padding: 1rem; 
 }
 
 .project-content {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: flex-start; */
-    min-height: 100%;
+    flex: 0 0 100%;
     padding: 20px;
-    border: 3px dashed green;
-
-    position: relative;
-    
+    position: relative;  
     transition: all 0.5s ease-in-out;
-
+    width: 100%;
+    height: 100%;
 }
 
 .project-content img {
-
-    max-width: 100%;
-    height: auto;
-    max-height: 100%;
-   
-    border: solid 3px yellow;
-}
-
-
-
+    width: 100%;
+    height: 100%;
+}  
 
 
 .note {
     width: 120px;
     height: 70px;
     text-align: left;
-    background-color: #c4641b;
+    background-color: var(--nav-color);
     position: absolute;
-    border: solid 3px black;
-    bottom: 100px;
-    /* margin: -8rem 0 1.5rem 0; */
+    bottom: 15%;
+    line-height: 2;
+}
 
+.note:hover {
+    background-color: var(--hover-color);
+}
+
+.contact {
+    line-height: 2;
+    font-size: 20px;
+}
+
+.contact a {
+    color:var(--nav-color);
+    text-decoration: none;  
+}
+
+footer {
+  padding: 30px;
+  clear: both;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+  color: var(--light);
 }
 
 
-
-
+ /* width for ipad and tablets */
+ /* make nav in column and move projects in column*/
+ /* move all h2 on top of each section, make border line from vertical to horizontal*/
 @media screen and (max-width: 920px) {
   nav ul {
     flex-direction: column;
-    margin: 10px;
-    font-size: 50px;
+    margin: 10px 100px 10px 10px;
+    font-size: 35px;
   }
-  
+
   header {
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
     line-height: 1.5;
   }
 
   .profile-photo {
-    width: 300px;
+    width: 220px;
+  }
+
+  .section-layout{
+    flex-direction: column;
+  }
+
+  .section-layout>h2 {
+    text-align: center;
+ 
   }
 
   .section-layout>div {
-    flex: 0 0 89%;
-    flex-direction: column;
-    
+    display: block;
+    border-top: solid 3px var(--nav-color);
+    border-left: none;
   }
 
   .main-project {
-    flex: 0 0 100%;
+    flex: 1 0 100%;
+    margin: 1rem;
   }
 
   .other-projects {
-    flex: 0 0 100%;
+    flex: 0 1 100%;
+    margin: 1rem;
   }
+  
+}
 
+ /* width for mobile device */
+ /* make the whole header in column*/
+@media screen and (max-width: 560px) {
+    nav ul {
+      flex-direction: column;
+      margin: 10px;
+      font-size: 25px;
+    }
     
+    header {
+      flex-direction: column;
+      text-align: center;
+      line-height: 1.5;
+    }
+  
+    .profile-photo {
+      width: 150px;
+    }
 }
   
