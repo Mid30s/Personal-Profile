@@ -1,13 +1,12 @@
-:root {
-
-    /* declare a variable with `--` syntax */
+ /* declare a variable with `--` syntax */
+:root {  
     --dark: #363630;
     --light: #fff;
     --nav-color: #c4641b;
     --hover-color: #a1b6ca
-  }
+}
 
-  * {
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -17,7 +16,7 @@ body {
     background-color: var(--dark);
 }
 
- /* sets flexbox for hearder */
+/* sets flexbox for header */
 header {
     display: flex;
     justify-content: space-between;
@@ -90,7 +89,8 @@ nav a:hover {
 /*sets line-height and font size for about me paragraph*/
 .section-layout .about-me {
     line-height: 1.5;
-    font-size: 20px
+    font-size: 20px;
+    padding-left: 3.5%;
 }
 
 /* use >div to select first div next to class selector,which includes 
@@ -133,7 +133,15 @@ nav a:hover {
 .project-content img {
     width: 100%;
     height: 100%;
-}  
+    border: solid 1px var(--nav-color) ;
+    box-shadow: inset 0px 0px 8px var(--nav-color), 0 0 15px var(--nav-color);
+}
+
+/* adds image UI */
+.project-content img:hover {
+  transform: scale(1.1);
+  transition: all .3s linear;
+}
 
 
 .note {
@@ -144,15 +152,21 @@ nav a:hover {
     position: absolute;
     bottom: 15%;
     line-height: 2;
+    padding-left: 5px;
 }
 
+/* add hover UI*/
 .note:hover {
     background-color: var(--hover-color);
 }
 
 .contact {
     line-height: 2;
-    font-size: 20px;
+    font-size: 20px; 
+}
+
+.contact ul{
+  padding-left: 3%;
 }
 
 .contact a {
@@ -166,8 +180,17 @@ footer {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
   color: var(--light);
+  background-color: var(--nav-color);
 }
 
+.contact-button {
+  background-color: var(--nav-color);
+  color: var(--light);
+}
+
+.contact-button:hover {
+  background-color: var(--hover-color);
+}
 
  /* width for ipad and tablets */
  /* make nav in column and move projects in column*/
