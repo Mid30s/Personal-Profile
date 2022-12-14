@@ -139,8 +139,9 @@ nav a:hover {
 
 /* adds image UI */
 .project-content img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: all .3s linear;
+  opacity: 5;
 }
 
 
@@ -149,6 +150,7 @@ nav a:hover {
     height: 70px;
     text-align: left;
     background-color: var(--nav-color);
+    box-shadow: inset 0px 0px 8px var(--nav-color), 0 0 15px var(--nav-color);
     position: absolute;
     bottom: 15%;
     line-height: 2;
@@ -175,7 +177,7 @@ nav a:hover {
 }
 
 footer {
-  padding: 30px;
+  padding: 20px;
   clear: both;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: center;
@@ -186,6 +188,9 @@ footer {
 .contact-button {
   background-color: var(--nav-color);
   color: var(--light);
+  box-shadow: inset 0px 0px 8px var(--nav-color), 0 0 15px var(--nav-color);
+  padding-left: 5px;
+  padding-right: 5px; 
 }
 
 .contact-button:hover {
