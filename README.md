@@ -22,6 +22,11 @@ Design a personal profile webpage to potential employer.
 
 ## Description
 
+This is the first web page I build since I started coding. It is a big challenge to me from the beginning. However,I know all things are difficult before they are easy. Last two week, I learn lots of knowledge about HTML and CSS. This profile page is good way to show my study result.
+
+The first problem I have is flexbox layout in CSS. The navigation bar and projects photos are just go randomly in page. One reason is I do not have a good html layout (such as: correct container). Another one is I am not good at flexbox layout. So I spend more than half day to watch zoom recording about flex layout section. And I also reverse engineered the class mini project code. which I have learned how to make a correct flexbox layout and media query.
+
+What I learn most in this challenge is how to plan and design a web page. A logical HTML structure is the most important lesson that I learned. Since when I begin to add css code, half of my time spend on how to fix bugs in HTML structure.  I realized the importance to have a good logical structure. It will save me a lot of time next time. I also practice css that I learn this week,including hover selector and css button style.
 
 
 ## Installation
@@ -30,7 +35,7 @@ N/A
 
 ## Usage
 
-To view this application,the following image shows the landing page of the application.
+To view this application,the following image shows the landing page of the application, or click on https://mid30s.github.io/Personal-Profile/
 
 ![Gary's Profile](./assets/images/profile-page.gif)
 
