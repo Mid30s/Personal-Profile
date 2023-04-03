@@ -266,4 +266,7 @@ footer {
       width: 150px;
     }
 }
-  
+  .travia-game img{
+    filter: grayscale(35%);
+    -webkit-filter: grayscale(35%);
+}
